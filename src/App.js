@@ -22,14 +22,14 @@ export default function Campo() {
         console.log("Jogador 2 Venceu!");
         return "Jogador 2 venceu!";
     } else if (
-      quadrados[0]!=null &&
-      quadrados[1]!=null &&
-      quadrados[2]!=null &&
-      quadrados[3]!=null &&
-      quadrados[4]!=null &&
-      quadrados[5]!=null &&
-      quadrados[6]!=null &&
-quadrados[7]!=null &&
+      quadrados[0]!=null && 
+      quadrados[1]!=null && 
+      quadrados[2]!=null && 
+      quadrados[3]!=null && 
+      quadrados[4]!=null && 
+      quadrados[5]!=null && 
+      quadrados[6]!=null && 
+quadrados[7]!=null && 
 quadrados[8]!=null
     ) {
       console.log("Deu empate!");
