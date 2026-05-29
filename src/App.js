@@ -13,29 +13,29 @@ export default function Campo() {
   
 
 
-  function calcularVencedor() {
-    if ((quadrados[0]=="X" && quadrados[1]=="X" && quadrados[2]=="X")
-      || (quadrados[3]=="X" && quadrados[4]=="X" && quadrados[5]=="X")
-      || (quadrados[6]=="X" && quadrados[7]=="X" && quadrados[8]=="X")
+  function calcularVencedor(quadradosTemp) {
+    if ((quadradosTemp[0]=="X" && quadradosTemp[1]=="X" && quadradosTemp[2]=="X")
+      || (quadradosTemp[3]=="X" && quadradosTemp[4]=="X" && quadradosTemp[5]=="X")
+      || (quadradosTemp[6]=="X" && quadradosTemp[7]=="X" && quadradosTemp[8]=="X")
     ) {
       console.log("Jogador 1 Venceu!");
       return "Jogador 1 venceu!";
-    } else if ((quadrados[0]=="O" && quadrados[1]=="O" && quadrados[2]=="O")
-      || (quadrados[3]=="O" && quadrados[4]=="O" && quadrados[5]=="O")
-      || (quadrados[6]=="O" && quadrados[7]=="O" && quadrados[8]=="O")
+    } else if ((quadradosTemp[0]=="O" && quadradosTemp[1]=="O" && quadradosTemp[2]=="O")
+      || (quadradosTemp[3]=="O" && quadradosTemp[4]=="O" && quadradosTemp[5]=="O")
+      || (quadradosTemp[6]=="O" && quadradosTemp[7]=="O" && quadradosTemp[8]=="O")
     ) {
         console.log("Jogador 2 Venceu!");
         return "Jogador 2 venceu!";
     } else if (
-      quadrados[0]!=null && 
-      quadrados[1]!=null && 
-      quadrados[2]!=null && 
-      quadrados[3]!=null && 
-      quadrados[4]!=null && 
-      quadrados[5]!=null && 
-      quadrados[6]!=null && 
-quadrados[7]!=null && 
-quadrados[8]!=null
+      quadradosTemp[0]!=null && 
+      quadradosTemp[1]!=null && 
+      quadradosTemp[2]!=null && 
+      quadradosTemp[3]!=null && 
+      quadradosTemp[4]!=null && 
+      quadradosTemp[5]!=null && 
+      quadradosTemp[6]!=null && 
+quadradosTemp[7]!=null && 
+quadradosTemp[8]!=null
     ) {
       console.log("Deu empate!");
       return "Deu empate!";
@@ -56,12 +56,12 @@ quadrados[8]!=null
     }
     setQuadrados(quadradoTemp);
     setEstado(!estado);
+    setStatus(calcularVencedor(quadradoTemp));
 
-    setStatus(calcularVencedor());
   }
   return <>
     <div class="board-row">
-      <Square valor={quadrados[0]} func={() => handleClick(0)} />
+      <Square valor={quadrados[0]} func={() =>handleClick(0)} />
       <Square valor={quadrados[1]} func={() =>handleClick(1)}/>
       <Square valor={quadrados[2]} func={() =>handleClick(2)}/>
     </div>
