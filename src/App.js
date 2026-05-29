@@ -1,4 +1,6 @@
 import { useState } from 'react';  
+import { BotaoReiniciar } from './Reiniciar';
+
 
 function Square({valor, func}) {
   return <button className="square" onClick={func}>{valor}</button>
@@ -8,6 +10,9 @@ export default function Campo() {
   const [quadrados, setQuadrados] = useState(Array(9).fill(null));
   const [estado, setEstado] = useState(false);
   const [status, setStatus] = useState(null);
+  
+
+
   function calcularVencedor() {
     if ((quadrados[0]=="X" && quadrados[1]=="X" && quadrados[2]=="X")
       || (quadrados[3]=="X" && quadrados[4]=="X" && quadrados[5]=="X")
@@ -71,5 +76,6 @@ quadrados[8]!=null
       <Square valor={quadrados[8]} func={() =>handleClick(8)}/>  
     </div>
     <div><h1>{status}</h1></div>
+    <BotaoReiniciar setQuadrados={setQuadrados} setEstado={setEstado} setStatus={setStatus}/>
   </>;
 }
